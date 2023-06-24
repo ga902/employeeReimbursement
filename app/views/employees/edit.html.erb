@@ -1,0 +1,27 @@
+<h1>Edit Details</h1>
+
+<%= form_with model: @employee do |form| %>
+    <div>
+        <%= form.label :first_name %>
+        <%= form.text_field :first_name %>
+    </div>
+    <div>
+        <%= form.label :last_name%>
+        <%= form.text_field :last_name %>
+    </div>
+    <div>
+        <%= form.label :email%>
+        <%= form.text_field :email%>
+    </div>
+    <div>
+        <%= form.label :designation%>
+        <%= form.text_field :designation %>
+    </div>
+    <div>
+        <%= form.label :department_id%>
+        <%= form.collection_select :department_id, Department.all, :id, :name %>
+    </div>
+    <div>
+        <%= form.submit%>
+    </div>
+    <% end %>
