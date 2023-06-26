@@ -1,20 +1,37 @@
-<h1>Genrate Bill</h1>
 
-<%= form_with model: @bill  do |form|%>
-    <div>
-        <%= form.label :amount%>
-        <%= form.text_field :amount%>
-    </div>
-    <div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 mt-5">
+      <h1>Generate Bill</h1>
+    </div>  
+  </div>
+  <%= form_with model: @bill do |form| %>
+    <div class="row">
+      <div class="col-md-6 form-group">
         <%= form.label :type %>
-        <%= form.text_field :type %>
+        <%= form.select :type, @allowance_types, { include_blank: 'Please select' }, class: 'form-control' %>
+      </div>
+      <div class="form-group col-md-6 mt-10px">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text">INR</span>
+          </div>
+          <%= form.text_field :amount, class: 'form-control' %>
+        </div>
+      </div>
     </div>
-    <div>
-        <%= form.label :employee_id %>
-        <%= form.collection_select :employee_id, Employee.all ,:id , :first_name %>
+    <div class="row mt-3">
+      <div class="col-md-6 form-group">
+        <%= form.label :employee_id, 'Employee' %>
+        <%= form.collection_select :employee_id, Employee.all, :id, :first_name, { include_blank: 'Please select' }, { class: 'form-control' } %>
+      </div>
+      <div class="col-md-6 form-group">
+      </div>
     </div>
-    <div>
-        <%= form.submit %>
+    <div class="row mt-5">
+      <div class="col-md-12">
+        <%= form.submit class: 'btn btn-primary' %>
+      </div>
     </div>
-<% end%>
-    
+  <% end %>
+</div>

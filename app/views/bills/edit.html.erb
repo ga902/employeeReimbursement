@@ -1,19 +1,37 @@
-<h2>update bill</h2>
+<div class="container mt-5">
+<%= form_with model: @bill do |form| %>
+  <div class="row">
+    <div class="form-group col-md-6">
+      <%= form.label :type %>
+      <%= form.collection_select :type, Bill.all, :type, :type, { include_blank: 'Please select' }, { class: 'form-control', selected: @bill.type } %>
 
-<%= form_with model: @bill do |form|%>
-    <div>
-        <%= form.label:type%>
-        <%= form.text_field :type%>
     </div>
-    <div>
-        <%= form.label :amount%>
-        <%= form.text_field :amount%>
+    <div class="form-group col-md-6">
+      <%= form.label :amount %>
+      <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text">INR</span>
+          </div>
+      <%= form.text_field :amount, class: 'form-control' %>
+      </div>
     </div>
-    <div>
-        <%= form.label :employee_id%>
-        <%= form.collection_select :employee_id, Employee.all, :id , :first_name%>
+  </div>
+  <div class="row">
+    <div class="form-group col-md-6">
+      <%= form.label :employee_id %>
+      <%= form.collection_select :employee_id, Employee.all, :id, :first_name, { include_blank: 'Please select' }, { class: 'form-control', selected: @bill.employee_id } %>
     </div>
-    <div>
-        <%= form.submit %>
+    <div class="col-md-6 form-group">
+      </div>
+  </div>
+  <div class="row mt-4">
+    <div class="col-md-6">
+      <div class="form-group">
+        <%= form.submit class: 'btn btn-primary' %>
+      </div>
     </div>
-    <% end %>
+  </div>  
+<% end %>
+</div>
+
+  
