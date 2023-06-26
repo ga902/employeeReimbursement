@@ -3,8 +3,7 @@
   <div class="row">
     <div class="form-group col-md-6">
       <%= form.label :type %>
-      <%= form.collection_select :type, Bill.all, :type, :type, { include_blank: 'Please select' }, { class: 'form-control', selected: @bill.type } %>
-
+      <%= form.select :type, @allowance_types, { include_blank: 'Please select' }, class: 'form-control' %>      
     </div>
     <div class="form-group col-md-6">
       <%= form.label :amount %>

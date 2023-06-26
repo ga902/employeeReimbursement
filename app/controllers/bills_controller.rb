@@ -20,6 +20,8 @@ class BillsController < ApplicationController
   
     def edit
       @bill = Bill.find(params[:id])
+      @allowance_types = ['Travel', 'Food', 'Lodging', 'Transportation', 'Entertainment', 'Office Supplies', 'Training', 'Equipment', 'Maintenance', 'Communication','other']
+
     end
   
     def update
