@@ -60,7 +60,7 @@ Contributing
 Contributions are welcome! If you find any issues or want to add new features, please submit an issue or a pull request.
 
 License
-The Employee Reimbursement Portal is open-source software licensed under the MIT license.
+The Employee Reimbursement Portal is open-source software .
 
 Acknowledgements
 This application was built using Ruby on Rails and various open-source libraries and frameworks.
