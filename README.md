@@ -66,6 +66,6 @@ Acknowledgements
 This application was built using Ruby on Rails and various open-source libraries and frameworks.
 
 Contact
-For any questions or inquiries, please contact Your Name.
+For any questions or inquiries, please contact Ganesh Hurgule.
 
 Feel free to update the contact information and acknowledgements section with your own details.
