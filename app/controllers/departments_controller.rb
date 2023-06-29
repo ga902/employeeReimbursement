@@ -1,5 +1,6 @@
 class DepartmentsController < ApplicationController
     def show
+        # get employee count 
         department_name = params[:name].gsub("-", " ").titleize
         @department = Department.find_by(name: department_name)
         
