@@ -14,7 +14,7 @@ class EmployeesController < ApplicationController
         end
     end
     def index
-        @employees = Employee.all
+        @employees = Employee.includes(:bills)
         render 'index'
     end
     def edit 

@@ -22,7 +22,7 @@
                 <td><%= bill.amount %></td>
                 <td><%= bill.created_at.strftime("%d %b %Y") %></td>
                 <td><%= bill.employee.first_name %></td>
-                <td><%= bill.employee.department.name %></td>
+                <td><%= link_to bill.employee.department.name, department_path(bill.employee.department.name.parameterize) %></td>
                 <td><%= link_to 'Edit', edit_bill_path(bill), class:'btn btn-primary'	%>
                 <td><%= link_to 'Delete',bill_path(bill), data:{turbo_method: :delete,
                 turbo_confirm: "Are you sure?"} ,class:'btn btn-danger'%>

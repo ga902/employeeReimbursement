@@ -14,6 +14,7 @@
                             <th>Email</th>
                             <th>Designation</th>
                             <th>Departmet</th>
+                            <th>Total Amount</th>
                             <th></th>
                             <th></th>
                             <th></th>
@@ -27,6 +28,7 @@
                             <td><%= employee.email %></td>
                             <td><%= employee.designation %></td>
                             <td><%= employee.department.name%></td>
+                            <td><%= employee.bills.sum(:amount) %></td>
                             <td><%= link_to 'Edit',edit_employee_path(employee), class:"btn btn-success" %></td>
                             <td>
                             <%= link_to "Destroy", employee_path(employee), data: {

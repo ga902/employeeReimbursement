@@ -1,0 +1,45 @@
+<div class="row">
+  <div class="col-md-12">
+    <h2><%= action_name.capitalize %> Employee Entry</h2>
+  </div>
+  <div class="col-md-12">
+    <div class="row">
+      <%= form_with model: employee do |form| %>
+        <div class="row">
+          <div class="form-group col-md-4">
+            <%= form.label :first_name %>
+            <%= form.text_field :first_name, class: "form-control" %>
+          </div>
+          <div class="form-group col-md-4">
+            <%= form.label :last_name %>
+            <%= form.text_field :last_name, class: "form-control" %>
+          </div>
+          <div class="form-group col-md-4">
+            <%= form.label :email %>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">@</span>
+              </div>
+              <%= form.text_field :email, class: "form-control" %>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col-md-6 form-group">
+            <%= form.label :designation %>
+            <%= form.text_field :designation, class: "form-control" %>
+          </div>
+          <div class="col-md-6 form-group">
+            <%= form.label :department_id %>
+            <%= form.collection_select :department_id, Department.all, :id, :name, { include_blank: 'Please select' }, { class: 'form-control', selected: employee.department_id } %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 form-group">
+            <%= form.submit class: 'btn btn-primary mt-5' %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
